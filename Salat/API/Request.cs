@@ -22,11 +22,14 @@ namespace Salat.API
             WebClient client = new WebClient();
             string downloadString = client.DownloadString("http://muslimsalat.com/daily/" + Salat.Information.Internet_protocol.City + "/false.json");
             JObject rss = JObject.Parse(downloadString);
-            Salat.Information.Salat.fajr = (string)rss["items"][0]["fajr"];
-            Salat.Information.Salat.dhuhr = (string)rss["items"][0]["dhuhr"];
-            Salat.Information.Salat.asr = (string)rss["items"][0]["asr"];
-            Salat.Information.Salat.maghrib = (string)rss["items"][0]["maghrib"];
-            Salat.Information.Salat.isha = (string)rss["items"][0]["isha"];
+            Information.Salat.fajr = (string)rss["items"][0]["fajr"];
+            Information.Salat.dhuhr = (string)rss["items"][0]["dhuhr"];
+            Information.Salat.asr = (string)rss["items"][0]["asr"];
+            Information.Salat.maghrib = (string)rss["items"][0]["maghrib"];
+            Information.Salat.isha = (string)rss["items"][0]["isha"];
+            Weather.Temperature = (int)rss["today_weather"]["temperature"];
+            Console.Out.WriteLine(Weather.Temperature);
+
             if (!(DateTimeFormatInfo.CurrentInfo.AMDesignator == ""))
             {
                 PM_to_24_hours.Converter24();

@@ -15,6 +15,8 @@ namespace Salat.Features
                    Salat.Information.Salat.maghrib = (string)rss["items"][0]["maghrib"];
                    Salat.Information.Salat.isha = (string)rss["items"][0]["isha"];
          */
+
+        /* Convert PM to 24 hours system */
         public static void Converter24()
         {
             DateTime Fajr = Convert.ToDateTime(Salat.Information.Salat.fajr.ToUpper());
@@ -32,6 +34,7 @@ namespace Salat.Features
             DateTime isha = Convert.ToDateTime(Salat.Information.Salat.isha.ToUpper());
             Salat.Information.Salat.isha = isha.ToString("HH:mm");
         }
+
 
 
     }

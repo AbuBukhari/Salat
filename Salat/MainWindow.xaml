@@ -5,28 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Salat"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
+        ResizeMode="CanMinimize"
         Title="Salat" Height="450" Width="800">
-    <Grid Background="#FF1C1C1D">
+    <Grid Background="#FF191919">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="1" Margin="10,48,562,94" Background="#FF3D2D79" CornerRadius="7,7,7,7">
-            <TextBlock x:Name="Isha" Margin="4,227,0,9" FontFamily="Source Sans Pro Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Isha"/></TextBlock>
-        </Border>
-        <TextBlock Name="Fajr" Margin="15,69,0,311" FontFamily="Source Sans Pro Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Fajr"/></TextBlock>
-        <TextBlock Name="Dhuhr" Margin="15,123,0,258" FontFamily="Source Sans Pro Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Dhuhr"/></TextBlock>
-        <TextBlock Name="Asr" Margin="15,176,0,205" FontFamily="Source Sans Pro Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Asr"/></TextBlock>
-        <TextBlock Name="Maghrib" Margin="15,228,0,152" FontFamily="Source Sans Pro Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Maghrib"/></TextBlock>
+        <Border BorderThickness="1" Margin="10,48,162,94" Background="#FF3D2D79" CornerRadius="7,7,7,7"/>
+        <TextBlock Name="Fajr" Margin="15,69,0,311" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Fajr"/></TextBlock>
+        <TextBlock Name="Dhuhr" Margin="15,123,0,258" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Dhuhr"/></TextBlock>
+        <TextBlock Name="Asr" Margin="15,176,0,205" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Asr"/></TextBlock>
+        <TextBlock Name="Maghrib" Margin="15,228,0,152" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Maghrib"/></TextBlock>
+        <TextBlock x:Name="Isha" Margin="15,276,0,-40" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="208" ><Run Language="en-gb" Text="Isha"/></TextBlock>
         <Border BorderBrush="#FF603F7D" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="15,148,0,0" VerticalAlignment="Top" Width="192"/>
         <Border BorderBrush="#FF603F7D" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="15,95,0,0" VerticalAlignment="Top" Width="192"/>
         <Border BorderBrush="#FF603F7D" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="15,201,0,0" VerticalAlignment="Top" Width="192"/>
         <Border BorderBrush="#FF603F7D" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="15,254,0,0" VerticalAlignment="Top" Width="192"/>
         <Border BorderBrush="#FF603F7D" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="15,302,0,0" VerticalAlignment="Top" Width="192"/>
 
-        <Border BorderThickness="1" Margin="10,345,450,30" Background="#FF3D2D79" CornerRadius="7,7,7,7" >
-            <TextBlock x:Name="time" Margin="121,0,0,0" FontFamily="Source Sans Pro Light" Foreground="White" FontSize="20" Width="208" VerticalAlignment="Center" HorizontalAlignment="Left" ><Run Text="00:00:00"/></TextBlock>
+        <Border BorderThickness="1" Margin="10,345,50,30" Background="#FF3D2D79" CornerRadius="7,7,7,7" >
+            <TextBlock x:Name="time" Margin="121,0,0,0" FontFamily="Montserrat Medium" Foreground="White" FontSize="20" Width="208" VerticalAlignment="Center" HorizontalAlignment="Left" ><Run Text="00:00:00"/></TextBlock>
         </Border>
-
+        <Border BorderThickness="1" Margin="12,48,48,296" Background="#FF3D2D79" CornerRadius="7,7,7,7" Grid.Column="1" >
+            <TextBlock x:Name="temperature" Margin="9,21,0,0" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="154" VerticalAlignment="Top" ><Run Language="en-gb" Text="0"/></TextBlock>
+        </Border>
+        <TextBlock x:Name="Country" Margin="150,70,0,0" FontFamily="Work Sans Light" Foreground="White" HorizontalAlignment="Left" FontSize="20" Width="154" VerticalAlignment="Top" Grid.Column="1" ><Run Language="en-gb" Text="Unknown"/></TextBlock>
+        <TextBlock x:Name="Salam" HorizontalAlignment="Left" Margin="346,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="السلام عليكم" Height="36" Width="226" FontSize="36" Foreground="White" FontFamily="Arabic Typesetting" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

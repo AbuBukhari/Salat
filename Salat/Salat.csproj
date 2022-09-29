@@ -36,9 +36,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>appstore.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,9 +72,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Features\Clock.cs" />
+    <Compile Include="Features\Notification.cs" />
     <Compile Include="Features\PM to 24 hours.cs" />
     <Compile Include="Information\Internet protocol.cs" />
     <Compile Include="Information\Salat.cs" />
+    <Compile Include="Information\Weather.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -107,6 +116,18 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-refresh-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-temperature-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="appstore.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MyIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
