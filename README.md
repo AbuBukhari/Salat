@@ -1,5 +1,5 @@
 # Salat
-Islamic prayer.
+Islamic prayer program.
 
 # UNDER DEVELOPMENT
 
