@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -19,6 +20,7 @@ using Salat.API;
 using Salat.Features;
 using Salat.Information;
 
+
 namespace Salat
 {
     /// <summary>
@@ -28,10 +30,11 @@ namespace Salat
     {
         System.Windows.Threading.DispatcherTimer Timer = new System.Windows.Threading.DispatcherTimer();
 
-        System.Windows.Threading.DispatcherTimer Timer2 = new System.Windows.Threading.DispatcherTimer();
+        System.Windows.Threading.DispatcherTimer refresh_timer = new System.Windows.Threading.DispatcherTimer();
 
         public MainWindow()
         {
+            Console.Out.WriteLine(DateTime.Now.ToString("dd/MMM/yyyy", new CultureInfo("ar")));
             Salat.API.Request.api();
             InitializeComponent();
             Timer.Tick += new EventHandler(Timer_Click);
@@ -43,11 +46,11 @@ namespace Salat
             Maghrib.Text = $"Maghrib: {Salat.Information.Salat.maghrib.ToUpper()}";
             Asr.Text = $"Asr: {Salat.Information.Salat.asr.ToUpper()}";
             Isha.Text = $"Isha: {Salat.Information.Salat.isha.ToUpper()}";
-            temperature.Text = $"{Weather.Temperature} ℃";
+            hijri.Text = $"{DateTime.Now.ToString("MMM", new CultureInfo("ar"))}";
             Country.Text = Information.Internet_protocol.Country;
-            Timer2.Tick += new EventHandler(refresh);
-            Timer2.Interval = new TimeSpan(1, 0, 0);
-            Timer2.Start();
+            refresh_timer.Tick += new EventHandler(refresh);
+            refresh_timer.Interval = new TimeSpan(1, 0, 0);
+            refresh_timer.Start();
         }
 
         private void refresh(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace Salat
             Maghrib.Text = $"Maghrib: {Salat.Information.Salat.maghrib.ToUpper()}";
             Asr.Text = $"Asr: {Salat.Information.Salat.asr.ToUpper()}";
             Isha.Text = $"Isha: {Salat.Information.Salat.isha.ToUpper()}";
-            temperature.Text = $"{Weather.Temperature} ℃";
+            hijri.Text = $"{DateTime.Now.ToString("MMM", new CultureInfo("ar"))}";
             Country.Text = Information.Internet_protocol.Country;
         }
 
