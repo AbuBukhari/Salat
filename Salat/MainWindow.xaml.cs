@@ -34,9 +34,18 @@ namespace Salat
 
         public MainWindow()
         {
+            Settings.Reader();
             Console.Out.WriteLine(DateTime.Now.ToString("dd/MMM/yyyy", new CultureInfo("ar")));
             Salat.API.Request.api();
             InitializeComponent();
+            if (Information.App.app)
+            {
+                start.IsChecked = true; 
+            }else
+            {
+                start.IsChecked = false;
+            }
+
             Timer.Tick += new EventHandler(Timer_Click);
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
@@ -66,8 +75,30 @@ namespace Salat
             Country.Text = Information.Internet_protocol.Country;
         }
 
+
+
+        private void CheckboxFalse(object sender, RoutedEventArgs e)
+        {
+            Information.App.app = false;
+            Features.Settings.Writer(Information.Salat.Azan, Information.App.app);
+            if (!AutoStart.StartUpManager.IsUserAdministrator())
+            {
+                MessageBox.Show("This program doesn't have Admin rights please reopen with admin rights");
+            }
+            AutoStart.StartUpManager.RemoveApplicationFromCurrentUserStartup();
+        }
+
+
+        private void CheckboxTrue(object sender, RoutedEventArgs e)
+        {
+            Information.App.app = true;
+            Features.Settings.Writer(Information.Salat.Azan, Information.App.app);
+            AutoStart.StartUpManager.AddApplicationToCurrentUserStartup(); 
+        }
+
         private void Timer_Click(object sender, EventArgs e)
         {
+
             DateTime d;
             d = DateTime.Now;
             if (DateTime.Parse(Clock.time()) > DateTime.Now)

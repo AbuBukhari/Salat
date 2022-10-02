@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Salat.Information
 {
-    class Weather
+    class App
     {
-        public static int Temperature { get; set; }
+        public static bool app = false;
     }
 }

@@ -13,5 +13,7 @@ namespace Salat.Information
         public static string asr { get; set; }
         public static string maghrib { get; set; }
         public static string isha { get; set; }
+        public static bool Azan = true;
+
     }
 }

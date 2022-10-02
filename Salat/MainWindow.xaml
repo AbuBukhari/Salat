@@ -9,7 +9,8 @@
         ResizeMode="CanMinimize"
         Title="Salat" Height="450" Width="800">
     <Grid Background="#424874">
-        <Border BorderBrush="White" BorderThickness="1" Margin="0,155,0,0" Background="#FFD6D6D6"/>
+        <Border BorderBrush="White" BorderThickness="1" Margin="0,155,0,0" Background="#FFD6D6D6">
+        </Border>
         <Border BorderThickness="1" Margin="10,48,561,94" Background="White" CornerRadius="7,7,7,7">
             <Border.Effect>
                 <DropShadowEffect Opacity="0.3"/>
@@ -40,5 +41,11 @@
         <TextBlock x:Name="Country" Margin="519,65,0,0" FontFamily="Work Sans Medium" Foreground="Black" HorizontalAlignment="Left" FontSize="20" Width="154" VerticalAlignment="Top" ><Run Language="en-gb" Text="Unknown"/></TextBlock>
         <TextBlock x:Name="Salam" HorizontalAlignment="Left" Margin="300,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="السلام عليكم" Height="48" Width="226" FontSize="36" Foreground="White" FontFamily="TABad"/>
         <TextBlock x:Name="hijri" Margin="5,15,0,0" FontFamily="TABad" Foreground="White" HorizontalAlignment="Left" FontSize="16" Width="181" ><Run Language="en-gb" Text="Hijri date"/></TextBlock>
+        <Border BorderThickness="1" Margin="592,159,48,21" Background="White" CornerRadius="7,7,7,7">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.3"/>
+            </Border.Effect>
+            <CheckBox x:Name="start" Checked="CheckboxTrue" Unchecked="CheckboxFalse" FontFamily="Work Sans Medium" Content="Auto startup" Margin="18,24,-18,-24"/>
+        </Border>
     </Grid>
 </Window>

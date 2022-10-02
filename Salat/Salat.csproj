@@ -72,10 +72,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Features\AutoStart.cs" />
     <Compile Include="Features\Clock.cs" />
     <Compile Include="Features\Hijri.cs" />
     <Compile Include="Features\Notification.cs" />
     <Compile Include="Features\PM to 24 hours.cs" />
+    <Compile Include="Features\Settings.cs" />
     <Compile Include="Information\Internet protocol.cs" />
     <Compile Include="Information\Salat.cs" />
     <Compile Include="Information\Weather.cs" />

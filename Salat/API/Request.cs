@@ -27,8 +27,7 @@ namespace Salat.API
             Information.Salat.asr = (string)rss["items"][0]["asr"];
             Information.Salat.maghrib = (string)rss["items"][0]["maghrib"];
             Information.Salat.isha = (string)rss["items"][0]["isha"];
-            Weather.Temperature = (int)rss["today_weather"]["temperature"];
-            Console.Out.WriteLine(Weather.Temperature);
+
 
             if (!(DateTimeFormatInfo.CurrentInfo.AMDesignator == ""))
             {
